@@ -1,0 +1,67 @@
+<doctype HTML>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+	<script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js" type="text/javascript"></script>
+	
+</head>
+<body>
+	<script>
+	client = new Paho.MQTT.Client("iot.eclipse.org", Number(80), "DanielsPC");
+	
+	// set callback handlers
+	client.onConnectionLost = onConnectionLost;
+	client.onMessageArrived = onMessageArrived;
+
+	// connect the client
+	client.connect({onSuccess:onConnect});
+
+	function sendMessage(m){
+		let message = new Paho.MQTT.Message(m);
+		message.destinationName = "DanielCar";
+		client.send(message);
+	}
+	// called when the client connects
+	function onConnect() {
+	  // Once a connection has been made, make a subscription and send a message.
+	  console.log("onConnect");
+	  client.subscribe("DanielCar");
+	  message = new Paho.MQTT.Message("1");
+	  message.destinationName = "DanielCar";
+	  client.send(message);
+	}
+
+	// called when the client loses its connection
+	function onConnectionLost(responseObject) {
+	  if (responseObject.errorCode !== 0) {
+		console.log("onConnectionLost:"+responseObject.errorMessage);
+	  }
+	}
+
+	// called when a message arrives
+	function onMessageArrived(message) {
+	  console.log("onMessageArrived:"+message.payloadString);
+	}
+	
+	
+	Mousetrap.bind('w', function() {
+		console.log("W")
+		sendMessage("f")
+	}, "keydown");
+	Mousetrap.bind('a', function() {
+		console.log("A")
+		sendMessage("1")
+	}, "keydown");
+	Mousetrap.bind('s', function() {
+		console.log("S")
+		sendMessage("b")
+	}, "keydown");
+	Mousetrap.bind('d', function() {
+		console.log("D")
+		sendMessage("2")
+	}, "keydown");
+	Mousetrap.bind('space', function() {
+		console.log("STOP")
+		sendMessage("s")
+	}, "keydown");
+	</script>
+</body>

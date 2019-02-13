@@ -1,0 +1,26 @@
+Elektronikk komponenter:
+
+DHT11 - Temperature and Relative Humidity Sensor
+
+L9110s H bridge DC motor driver
+https://www.aliexpress.com/item/L9110S-L9110-Two-Motor-Driven-Module/32674826410.html?spm=2114.13010708.0.0.3c194c4dKHVzRh
+
+ZHT103 5A AC current sensor
+
+
+
+
+
+
+
+
+
+Libraries:
+https://github.com/adafruit/Adafruit_Sensor
+
+ESP8266 autoconnect/wifi configurator
+Maybe use https://github.com/dreed47/WifiMQTTManager as it also supports MQTT
+
+https://randomnerdtutorials.com/wifimanager-with-esp8266-autoconnect-custom-parameter-and-manage-your-ssid-and-password/
+https://github.com/tzapu/WiFiManager
+https://github.com/bblanchon/ArduinoJson

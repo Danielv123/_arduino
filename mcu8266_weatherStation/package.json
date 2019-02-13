@@ -1,0 +1,15 @@
+{
+  "name": "mcu8266_weatherstation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "mqtt": "^2.18.8",
+    "prom-client": "^11.1.3"
+  }
+}
