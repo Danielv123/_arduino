@@ -31,4 +31,4 @@ client.on('message', function (topic, message) {
 	
 	pushgateway.push({ jobName: 'powerMonitor' }, function(err, resp, body) {})
 })
-const pushgateway = new Prometheus.Pushgateway('http://hme.danielv.no:9091');
+const pushgateway = new Prometheus.Pushgateway('http://192.168.10.144:9091');
