@@ -1,0 +1,7 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "NodeMCUv2")(type "KiCad")(uri "${KIPRJMOD}/113990105.kicad_sym")(options "")(descr ""))
+  (lib (name "FQP30N06L")(type "KiCad")(uri "${KIPRJMOD}/components/FQP30N06L.kicad_sym")(options "")(descr ""))
+  (lib (name "BME280_module")(type "KiCad")(uri "${KIPRJMOD}/components/BME280_module.kicad_sym")(options "")(descr ""))
+  (lib (name "XT60PW-M")(type "KiCad")(uri "${KIPRJMOD}/components/XT60PW-M.kicad_sym")(options "")(descr ""))
+)

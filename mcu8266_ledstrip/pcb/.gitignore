@@ -1,0 +1,4 @@
+pcb-backups
+*cache
+*.lck
+production
